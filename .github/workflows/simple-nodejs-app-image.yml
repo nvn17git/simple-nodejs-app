@@ -19,13 +19,13 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.0.0
       with:
-      username: ${{ secrets.DOCKERHUB_USERNAME }}
-      password: ${{ secrets.DOCKERHUB_PASSWORD}}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD}}
 
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
         context: .
-          push: true
-          tags: nvndocker/new-simple-nodejs-app:latest
+        push: true
+        tags: nvndocker/new-simple-nodejs-app:latest
 
